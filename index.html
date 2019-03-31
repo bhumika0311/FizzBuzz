@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Fizzbuzz</title>
+    <link rel= "stylesheet" href = "style.css">
+</head>
+<body>
+    <h1 id = "heading"> FIZZBUZZ</h1>
+    <input id="box" placeholder="Enter positive integer here">
+    <button id = "button1" onclick="print()"> Go!</button>
+    <ul id="list">
+
+    </ul>
+    
+    <script>
+        function print(){
+            let box= document.getElementById('box')
+            let list = document.getElementById('list')
+            let n= parseInt(box.value)
+            let listhtml=""
+            let start= new Date().getTime()
+            for (let i=1; i<=n; i++){
+
+            let print=""
+            if (i%3==0) print+='Fizz'
+            if (i%5==0) print+='Buzz'
+            if(print=="") print+= i
+                listhtml+= '<li>'+ print + '</li>'
+            }
+
+            list.innerHTML=listhtml
+            let end= new Date().getTime()
+            console.log(end-start)
+        } 
+
+
+    </script>
+</body>
+</html>
